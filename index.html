@@ -76,7 +76,20 @@
                                     LOG TRANSAKSI REALTIME
                                 </div>
                                 <div class="panel-body">
-                                    <h1 id="txt">COK</h1>
+                                    <div class="table-responsive">
+                                        <table id="itemList" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +127,19 @@
 
 
         // Sync
-        dbRefObject.on('value', snap => {
-            console.log(snap.numChildren());
+        $(document).ready(function () {
+            dbRefObject.on('value', snap => {
+                var len = snap.numChildren();
+                //                console.log(len);
+
+                var rows = "";
+                snap.forEach(function (logSnapshot) {
+                    var logName = logSnapshot.val();
+                    rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
+                    console.log(logName.balance);
+                });
+                $(rows).appendTo("#itemList tbody");
+            });
         });
     </script>
 </body>
