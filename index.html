@@ -16,7 +16,11 @@
 
     <!-- MetisMenu CSS -->
     <link href="assets/css/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="assets/plugins/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
+    <!-- DataTables Responsive CSS -->
+    <link href="assets/plugins/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
 
@@ -112,6 +116,10 @@
     <!-- Custom Theme JavaScript -->
     <script src="assets/js/sb-admin-2.js"></script>
     <script src="assets/js/firebase.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="assets/plugins/datatables-responsive/dataTables.responsive.js"></script>
     <script type="text/javascript">
         var config = {
             apiKey: "AIzaSyCNmx0sn_cu6QQ04U9myAOnV_iPxlY9hRk",
@@ -139,7 +147,11 @@
                     console.log(logName.balance);
                 });
                 $(rows).appendTo("#itemList tbody");
+                $('#itemList').DataTable({
+                    responsive: true
+                });
             });
+
         });
     </script>
 </body>
