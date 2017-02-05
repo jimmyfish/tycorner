@@ -144,7 +144,7 @@
                 snap.forEach(function (logSnapshot) {
                     var logName = logSnapshot.val();
                     rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.dateStop + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
-                    console.log
+                    console.log(logName.dateStop);
                 });
                 $(rows).appendTo("#itemList tbody");
                 $('#itemList').DataTable({
