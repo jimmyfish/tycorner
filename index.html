@@ -85,6 +85,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
+                                                    <th>Date</th>
                                                     <th>Start Time</th>
                                                     <th>Stop Time</th>
                                                     <th>Price</th>
@@ -143,8 +144,9 @@
                 var rows = "";
                 snap.forEach(function (logSnapshot) {
                     var logName = logSnapshot.val();
-                    rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.dateStop + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
+                    rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.stopDate + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
                     console.log(logName.dateStop);
+                    console.log(logName);
                 });
                 $(rows).appendTo("#itemList tbody");
                 $('#itemList').DataTable({
