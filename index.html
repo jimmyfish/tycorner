@@ -143,8 +143,8 @@
                 var rows = "";
                 snap.forEach(function (logSnapshot) {
                     var logName = logSnapshot.val();
-                    rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
-                    console.log(logName.balance);
+                    rows += "<tr><td>" + logName.computerName + "</td><td>" + logName.dateStop + "</td><td>" + logName.startTime + "</td><td>" + logName.stopTime + "</td><td>" + logName.balance + "</td></tr>";
+                    console.log
                 });
                 $(rows).appendTo("#itemList tbody");
                 $('#itemList').DataTable({
